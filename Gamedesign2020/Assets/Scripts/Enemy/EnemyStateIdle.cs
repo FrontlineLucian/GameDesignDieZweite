@@ -52,6 +52,7 @@ public class EnemyStateIdle : IState
         owner.movement = new Vector2(0, 0);
         if((target.gameObject.transform.position - owner.gameObject.transform.position).magnitude < visionRange * 0.32f&& (target.gameObject.transform.position - owner.gameObject.transform.position).magnitude>0.32f)
         {
+            owner.target.isCaught = false;
             owner.stateMachine.ChangeState(new EnemyStateFollow(owner));
         }
         if (Time.time-time > 3)

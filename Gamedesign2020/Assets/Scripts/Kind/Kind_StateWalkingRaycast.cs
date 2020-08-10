@@ -22,6 +22,7 @@ public class Kind_StateWalkingRaycast : IState
     private Transform transform;
     private GridDebug gridObject;
     private int visionRange;
+    private bool isCaught;
     
 
     public Kind_StateWalkingRaycast(KindControllerRaycast owner)
@@ -34,7 +35,7 @@ public class Kind_StateWalkingRaycast : IState
         this.transform = owner.transform;
         this.gridObject = owner.gridObject;
         this.visionRange = owner.visionRange;
-
+        this.isCaught = owner.isCaught;
 
     }
     public void stateInit()
@@ -53,6 +54,8 @@ public class Kind_StateWalkingRaycast : IState
 
     public void stateUpdate()
     {
+        this.isCaught = owner.isCaught;
+        if (isCaught) owner.stateMachine.ChangeState(new KindStateCry(this.owner));
         //MonoBehaviour.print("reached");
         //MonoBehaviour.print("left");
         goal2D = new Vector2(goal.x, goal.y);

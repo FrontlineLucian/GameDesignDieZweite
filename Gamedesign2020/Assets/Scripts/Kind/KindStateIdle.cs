@@ -12,6 +12,7 @@ public class KindStateIdle : IState
     private GridDebug gridObject;
     private Vector3 goal;
     private int visionRange;
+    private bool isCaught;
     public KindStateIdle(KindControllerRaycast owner)
     {
         this.owner = owner;
@@ -19,7 +20,7 @@ public class KindStateIdle : IState
         this.movement = owner.movement;
         this.gridObject = owner.gridObject;
         this.visionRange = owner.visionRange;
-
+        this.isCaught = owner.isCaught;
     }
     public void stateExit()
     {
@@ -52,7 +53,8 @@ public class KindStateIdle : IState
 
     public void stateUpdate()
     {
-        
+        this.isCaught = owner.isCaught;
+        if (isCaught) owner.stateMachine.ChangeState(new KindStateCry(this.owner));
         movement = new Vector2(0, 0);
        
         Vector3 centerBoundingBox = owner.gameObject.GetComponent<BoxCollider2D>().bounds.center;

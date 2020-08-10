@@ -11,6 +11,7 @@ public class KindStateCry : IState
     private GridDebug gridObject;
     private Vector3 goal;
     private int visionRange;
+    private bool isCaught;
 
     public KindStateCry(KindControllerRaycast owner)
     {
@@ -19,7 +20,7 @@ public class KindStateCry : IState
         this.movement = owner.movement;
         this.gridObject = owner.gridObject;
         this.visionRange = owner.visionRange;
-
+        this.isCaught = owner.isCaught;
 
     }
     public void stateExit()
@@ -53,7 +54,7 @@ public class KindStateCry : IState
 
     public void stateUpdate()
     {
-
+        this.isCaught = owner.isCaught;
         movement = new Vector2(0, 0);
 
         Vector3 centerBoundingBox = owner.gameObject.GetComponent<BoxCollider2D>().bounds.center;
@@ -62,12 +63,12 @@ public class KindStateCry : IState
 
         direction = new Vector2(goal.x, goal.y) - new Vector2(centerBoundingBox.x, centerBoundingBox.y);
 
-        if (direction.magnitude > 0.3)
+        if (direction.magnitude > 0.3 && !isCaught)
         {
 
             owner.stateMachine.ChangeState(new Kind_StateWalkingRaycast(this.owner));
         }
-        if(goal.z>1) owner.stateMachine.ChangeState(new KindStateIdle(this.owner));
+        if(goal.z>1&&!isCaught) owner.stateMachine.ChangeState(new KindStateIdle(this.owner));
 
     }
 

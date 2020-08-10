@@ -47,12 +47,19 @@ public class EnemyStateFollow : IState
 
     public void stateUpdate()
     {
+        
+        
+       
         //MonoBehaviour.print(lastGoalInUse);
         if (!lastGoalInUse)
         {
             goal2D = gridObject.getFollowTarget(visionRange, target.gameObject.transform.position, owner.gameObject.transform.position, owner.gameObject);
         }
-        if ((goal2D - (Vector2)owner.gameObject.transform.position).magnitude < 0.32f&&lastGoalInUse==false) owner.stateMachine.ChangeState(new EnemyStateIdle(owner));
+        if ((goal2D - (Vector2)owner.gameObject.transform.position).magnitude < 0.32f && lastGoalInUse == false)
+        {
+            owner.target.isCaught = true;
+            owner.stateMachine.ChangeState(new EnemyStateIdle(owner));
+        }
         if (goal2D !=new Vector2(-999,-999))
         {
            

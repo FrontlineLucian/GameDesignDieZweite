@@ -19,7 +19,8 @@ public class KindControllerRaycast : MonoBehaviour
    // [NonSerialized]
     public Vector2 movement;
     [NonSerialized]
-    public Vector3 goal;            
+    public Vector3 goal;
+    public bool isCaught = false;
 
 
 
