@@ -39,7 +39,8 @@ public class GhostController : MonoBehaviour
     public Animator animator;
     public StateMachine stateMachine = new StateMachine();
 
-    private Vector2 direction;
+    public Vector2 direction;
+    private bool validDash = true;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +52,7 @@ public class GhostController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(this.validDash);
         this.currentState = this.stateMachine.getCurrentState().Name;
         this.stateMachine.runStateUpdate();
     }
@@ -81,7 +83,10 @@ public class GhostController : MonoBehaviour
         this.rb.MovePosition(this.rb.position + this.movement  * Time.fixedDeltaTime);
     }
 
-
+    public void setValidDash(bool a)
+    {
+        this.validDash = a;
+    }
 
     //--Breakout Functions
 
@@ -109,13 +114,10 @@ public class GhostController : MonoBehaviour
 
     public bool BreakoutDash()
     {
-        if (good_form && Time.time - this.lastDash >= this.dashCooldown)
+        if (good_form && Time.time - this.lastDash >= this.dashCooldown && Input.GetButtonDown("Dash"))
         {
-            if (Input.GetButtonDown("Dash"))
-            {
-                this.stateMachine.ChangeState(new Ghost_StateDash(this));
-                return true;
-            }
+            this.stateMachine.ChangeState(new Ghost_StateDash(this, validDash));
+            return true;
         }
         return false;
     }

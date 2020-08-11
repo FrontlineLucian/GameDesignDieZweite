@@ -58,6 +58,8 @@ public class Ghost_StateWalking : IState
         this.direction.y = Input.GetAxisRaw("Vertical");
         this.direction.Normalize();
 
+        owner.direction = direction;
+
         //acceleration logik
         this.movement += this.direction * this.acceleration * 10 * Time.deltaTime;
         if (this.movement.magnitude > 1) {

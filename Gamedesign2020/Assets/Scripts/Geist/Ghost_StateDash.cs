@@ -17,12 +17,14 @@ public class Ghost_StateDash : IState
     private Vector2 movement;
 
     private bool inWall = false;
+    private bool doColl;
 
-    public Ghost_StateDash(GhostController owner) 
+    public Ghost_StateDash(GhostController owner, bool doColl) 
     {
         this.movement = owner.movement;
         this.animator = owner.animator;
         this.owner = owner;
+        this.doColl = doColl;
     }
 
     public void stateInit()
@@ -30,7 +32,10 @@ public class Ghost_StateDash : IState
         this.oldPos = owner.transform.position;
         this.startTime = Time.time;
         this.animator.Play("WalkState", -1, 0);
-        this.owner.hitbox.enabled = false;
+        if (doColl)
+        {
+            this.owner.hitbox.enabled = false;
+        }
     }
 
 
