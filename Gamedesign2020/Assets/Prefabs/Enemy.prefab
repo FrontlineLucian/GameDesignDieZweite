@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3510382427085702921}
   - component: {fileID: 4321464687856756884}
   - component: {fileID: 311630736}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,6 +50,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -166,8 +167,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   movement: {x: 0, y: 0}
-  findBack: 0
-  isOnPath: 0
   speed: 2
   pathCreator:
   - {fileID: 0}

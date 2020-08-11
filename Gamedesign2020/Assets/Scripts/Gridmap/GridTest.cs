@@ -15,16 +15,16 @@ public class GridTest
     public int width;
     [NonSerialized]
     public int height;
-    private float cellSize;
-    private int[,] gridArray;
-    private Vector3 originPos;
-    private Vector3 movefrom;
-    private bool movefromUsed = false;
-    private Transform parent;
+    public float cellSize;
+    public int[,] gridArray;
+    public Vector3 originPos;
+    public Vector3 movefrom;
+    public bool movefromUsed = false;
+    public Transform parent;
     public bool debug = false;
     
     //debug kram
-    private TextMesh[,] debugTextArray;
+    public TextMesh[,] debugTextArray;
 
     public event EventHandler<OnGridValueChangedEventArgs> OnGridValueChanged;
     public class OnGridValueChangedEventArgs : EventArgs
@@ -80,7 +80,7 @@ public class GridTest
     }
 
     //erhält grid koordinate und verschiebt sie in Weltkoordinaten
-    private Vector3 GetWorldPos(int x, int y)
+    public Vector3 GetWorldPos(int x, int y)
     {
         return new Vector3(x, y) * cellSize + originPos;
     }

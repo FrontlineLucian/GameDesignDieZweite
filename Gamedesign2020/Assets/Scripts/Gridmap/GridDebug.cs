@@ -8,7 +8,7 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class GridDebug : MonoBehaviour
 {
-    private GridTest grid;
+    public GridTest grid;
     public GameObject[] moveables;
     public GameObject[] lights;
     public float cellSize = .32f;

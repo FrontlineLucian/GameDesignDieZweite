@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using JetBrains.Annotations;
+using System.Linq;
 
 public class EnemyStateFollow : IState
 {
@@ -19,6 +21,7 @@ public class EnemyStateFollow : IState
     private bool lastGoalActive = false;
     private bool lastGoalInUse = false;
     private bool findBack;
+    public Stack<Vector2> traceback;
 
     public EnemyStateFollow(EnemyController owner)
     {
@@ -31,6 +34,7 @@ public class EnemyStateFollow : IState
         this.target = owner.target;
         this.movement = owner.movement;
         this.findBack = owner.findBack;
+        this.traceback = owner.traceback;
     }
     public void stateInit()
     {
@@ -38,18 +42,19 @@ public class EnemyStateFollow : IState
         this.animator.Play("WalkAnimations", -1, 0);
         this.owner.rb.bodyType = RigidbodyType2D.Dynamic;
         
+        
 
     }
     public void stateExit()
     {
+        owner.traceback = this.traceback;
         
     }
 
     public void stateUpdate()
     {
-        
-        
-       
+        //methode um weg des Gegners zu tracken
+        crossCell(owner);
         //MonoBehaviour.print(lastGoalInUse);
         if (!lastGoalInUse)
         {
@@ -153,7 +158,16 @@ public class EnemyStateFollow : IState
     {
         
     }
-    
+    public void crossCell(EnemyController owner)
+    {
+        int x, y;
+        owner.gridObject.grid.GetGridCoord(owner.transform.position, out x, out y);
+        if (new Vector2(x,y)!= traceback.Peek())
+        {
+            traceback.Push(new Vector2(x, y));
+        }
+        
+    }
    
 
    
