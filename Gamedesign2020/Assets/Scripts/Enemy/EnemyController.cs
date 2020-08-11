@@ -42,6 +42,7 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
+        traceback.Clear();
         movement = new Vector2(0, 0);
         this.animator = Sprite.GetComponent<Animator>();
         this.stateMachine.ChangeState(new EnemyStateWalking(this));
@@ -52,6 +53,8 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        
         //print(this.stateMachine.getCurrentState());
         this.stateMachine.runStateUpdate();
 
