@@ -114,6 +114,7 @@
     <Compile Include="Assets\CodeMonkey\Utils\UI_Sprite.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStateIdle.cs" />
     <Compile Include="Assets\Scripts\Geist\Ghost_MoveableCheckCollisionRotate.cs" />
+    <Compile Include="Assets\Scripts\initPath.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\CodeMonkey\README.txt" />

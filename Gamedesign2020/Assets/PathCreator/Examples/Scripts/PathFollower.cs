@@ -15,6 +15,7 @@ namespace PathCreation.Examples
         void Start() {
             if (pathCreator != null)
             {
+                pathCreator.InitializeEditorData(true);
                 // Subscribed to the pathUpdated event so that we're notified if the path changes during the game
                 pathCreator.pathUpdated += OnPathChanged;
             }

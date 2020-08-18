@@ -95,24 +95,19 @@ public class Ghost_StatePosses : IState
         var p = this.possesed.GetComponent<PathFollower>();
         if (p != null)
         {
-            Vector3 input = new Vector3(-Input.GetAxisRaw("Horizontal"), -Input.GetAxisRaw("Vertical"), 0);
-            Vector3 dir = Quaternion.Euler(0, 0, -90) * p.pathCreator.path.GetNormalAtDistance(p.GetDistanceTravelled());
+            Vector3 input = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0);
+            Vector3 dir = Quaternion.Euler(0, 0, 90) * p.pathCreator.path.GetNormalAtDistance(p.GetDistanceTravelled());
            
-            Vector3 zAxis = new Vector3(0, 0, 1);
-            Vector3 yAxis = new Vector3(0, 1, 0);
-            Vector3 xAxis = new Vector3(1, 0, 0);
-            float _a = Vector3.SignedAngle(yAxis, dir, zAxis);
-            input = Quaternion.Euler(0, 0, -_a) * input;
-            dir = Quaternion.Euler(0, 0, -_a) * dir;
+            float skalar = Vector3.Dot(input, dir) / (dir.magnitude*input.magnitude);
 
-            
-            float spd = Vector3.Angle(input, xAxis) / Vector3.Angle(dir, xAxis);
-            if (Math.Sign(input.y) != Math.Sign(dir.y))
+
+            float spd = 1 * skalar;
+            if (input.magnitude < 0.1)
             {
-                spd *= -1;
+                spd = 0;
             }
 
-            //MonoBehaviour.print(input);
+            //MonoBehaviour.print(skalar);
 
             if (p.GetDistanceTravelled() + (spd * Time.deltaTime) <= p.pathCreator.path.length && p.GetDistanceTravelled() + (spd * Time.deltaTime) >= 0)
             {

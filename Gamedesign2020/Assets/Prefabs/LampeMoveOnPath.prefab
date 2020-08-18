@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8754057047827090403}
   - component: {fileID: 4707532133077628255}
+  - component: {fileID: 9062885170904986706}
   m_Layer: 0
   m_Name: Path
   m_TagString: Untagged
@@ -84,6 +85,19 @@ MonoBehaviour:
     showNormalsHelpInfo: 0
     tabIndex: 0
   initialized: 1
+--- !u!114 &9062885170904986706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112945114801323666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406b37677605d2b419c42144e27f25af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: {fileID: 4707532133077628255}
 --- !u!61 &7638431251518775491
 BoxCollider2D:
   m_ObjectHideFlags: 0

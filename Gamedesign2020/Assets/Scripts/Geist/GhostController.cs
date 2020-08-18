@@ -41,6 +41,7 @@ public class GhostController : MonoBehaviour
 
     public Vector2 direction;
     private bool validDash = true;
+    private bool moveableDash = true;
 
     // Start is called before the first frame update
     void Start()
@@ -87,6 +88,10 @@ public class GhostController : MonoBehaviour
     {
         this.validDash = a;
     }
+    public void setMoveableDash(bool a)
+    {
+        this.moveableDash = a;
+    }
 
     //--Breakout Functions
 
@@ -116,7 +121,7 @@ public class GhostController : MonoBehaviour
     {
         if (good_form && Time.time - this.lastDash >= this.dashCooldown && Input.GetButtonDown("Dash"))
         {
-            this.stateMachine.ChangeState(new Ghost_StateDash(this, validDash));
+            this.stateMachine.ChangeState(new Ghost_StateDash(this, validDash || moveableDash));
             return true;
         }
         return false;
