@@ -52,6 +52,9 @@
     <UnityVersion>2020.1.1f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\Scripts\Licht\LightRank.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStateWalking.cs" />
     <Compile Include="Assets\PathCreator\Examples\Scripts\PathSpawner.cs" />
@@ -102,6 +105,7 @@
     <Compile Include="Assets\Scripts\Door\Door_StateClosed.cs" />
     <Compile Include="Assets\CodeMonkey\MonoBehaviours\ComponentActions.cs" />
     <Compile Include="Assets\Scripts\Geist\Ghost_SinusWackeln.cs" />
+    <Compile Include="Assets\Scripts\Geist\Ghost_WallCollisionCheckRotate.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStateFollow.cs" />
     <Compile Include="Assets\CodeMonkey\Utils\Button_Sprite.cs" />
     <Compile Include="Assets\CodeMonkey\Utils\UI_Bar.cs" />
@@ -109,7 +113,7 @@
     <Compile Include="Assets\CodeMonkey\Utils\FunctionPeriodic.cs" />
     <Compile Include="Assets\CodeMonkey\Utils\UI_Sprite.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStateIdle.cs" />
-    <Compile Include="Assets\Scripts\Geist\Ghost_WallCollisionCheckRotate.cs" />
+    <Compile Include="Assets\Scripts\Geist\Ghost_MoveableCheckCollisionRotate.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\CodeMonkey\README.txt" />
