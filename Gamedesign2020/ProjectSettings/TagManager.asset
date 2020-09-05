@@ -8,6 +8,7 @@ TagManager:
   - LIGHTSOURCE
   - SOLIDWALL
   - possesable
+  - GLOBALLIGHT
   layers:
   - Default
   - TransparentFX

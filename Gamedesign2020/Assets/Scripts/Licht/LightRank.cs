@@ -34,7 +34,7 @@ public class LightRank :MonoBehaviour
         }
         
 
-        light.intensity = intensity * influence * flickerMult;
+        //light.intensity = intensity * influence * flickerMult;
 
     }
 }

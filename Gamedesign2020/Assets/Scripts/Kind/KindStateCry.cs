@@ -12,6 +12,8 @@ public class KindStateCry : IState
     private Vector3 goal;
     private int visionRange;
     private bool isCaught;
+    private GameObject[] obj = GameObject.FindGameObjectsWithTag("LIGHTSOURCE");
+    private GameObject[] globalLights= GameObject.FindGameObjectsWithTag("GLOBALLIGHT");
 
     public KindStateCry(KindControllerRaycast owner)
     {
@@ -25,7 +27,7 @@ public class KindStateCry : IState
     }
     public void stateExit()
     {
-
+       
     }
 
     public void stateFixedUpdtate()
@@ -54,6 +56,20 @@ public class KindStateCry : IState
 
     public void stateUpdate()
     {
+        foreach (GameObject Objekt in obj){
+
+            if (Objekt.GetComponent<haesslicherFaktor>().cryFactor >= 0.1f) {
+                Objekt.GetComponent<haesslicherFaktor>().cryFactor = Objekt.GetComponent<haesslicherFaktor>().cryFactor - 0.1f*Time.deltaTime;
+            }
+        }
+        foreach (GameObject Objekt in globalLights)
+        {
+
+            if (Objekt.GetComponent<haesslicherFaktor>().cryFactor >= 0.2f)
+            {
+                Objekt.GetComponent<haesslicherFaktor>().cryFactor = Objekt.GetComponent<haesslicherFaktor>().cryFactor - 0.1f * Time.deltaTime;
+            }
+        }
         this.isCaught = owner.isCaught;
         movement = new Vector2(0, 0);
 
