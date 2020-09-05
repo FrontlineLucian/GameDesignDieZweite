@@ -64,6 +64,8 @@ public class Ghost_StateIdle : IState
             owner.stateMachine.ChangeState(new Ghost_StateWalking(this.owner));
         }
 
+        owner.BreakoutChargeScare();
+
         //Switch Form
         if (owner.good_form != owner.SwitchForm())
         { 

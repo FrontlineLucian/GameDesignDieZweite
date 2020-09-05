@@ -67,7 +67,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1081245393841132334}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -346,11 +346,14 @@ MonoBehaviour:
   acceleration: 1
   dashSpeed: 4
   dashTime: 0.15
+  chargeTime: 1
   influenceRange: 0.64
   dashCooldown: 0.5
   switchCooldown: 0.5
   Sprite: {fileID: 6141186158731060254}
   hitbox: {fileID: 5684876529155514062}
+  scareRangeIndicator: {fileID: 5618443434227095213, guid: 4b2d241836809cd4c94e70430fc06ac5,
+    type: 3}
   rb: {fileID: 8873121195973197166}
   direction: {x: 0, y: 0}
 --- !u!61 &5684876529155514062
@@ -472,7 +475,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5360506170214778453}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

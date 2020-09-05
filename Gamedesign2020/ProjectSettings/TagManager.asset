@@ -9,6 +9,7 @@ TagManager:
   - SOLIDWALL
   - possesable
   - GLOBALLIGHT
+  - ENEMY
   layers:
   - Default
   - TransparentFX
