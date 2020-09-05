@@ -14,6 +14,8 @@ public class GhostController : MonoBehaviour
     public float acceleration = 1f;
     public float dashSpeed = 4f;
     public float dashTime = 0.15f;
+    public float chargeTime = 1f;
+    public float scareRadius = 80f / 100f;
     public float influenceRange = 3*.32f;
     [NonSerialized]
     public GameObject[] lights;
@@ -28,6 +30,7 @@ public class GhostController : MonoBehaviour
     [Header("Components/Game Objects")]
     public GameObject Sprite;
     public BoxCollider2D hitbox;
+    public GameObject scareRangeIndicator;
 
 
 
@@ -122,6 +125,16 @@ public class GhostController : MonoBehaviour
         if (good_form && Time.time - this.lastDash >= this.dashCooldown && Input.GetButtonDown("Dash"))
         {
             this.stateMachine.ChangeState(new Ghost_StateDash(this, validDash || moveableDash));
+            return true;
+        }
+        return false;
+    }
+
+    public bool BreakoutChargeScare()
+    {
+        if (!good_form && Input.GetButtonDown("Dash"))
+        {
+            stateMachine.ChangeState(new Ghost_StateChargeScare(this));
             return true;
         }
         return false;

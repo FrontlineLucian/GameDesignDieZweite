@@ -88,6 +88,7 @@ public class Ghost_StateWalking : IState
 
         //--Breakout
         owner.BreakoutDash();
+        owner.BreakoutChargeScare();
 
         //To Idle State
         if (this.direction.magnitude == 0)
