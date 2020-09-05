@@ -24,6 +24,7 @@ public class EnemyStateFindBack : IState
     }
     public void stateInit()
     {
+        //MonoBehaviour.print("ibimshier");
         this.animator.Play("WalkAnimations", -1, 0);
         this.owner.rb.bodyType = RigidbodyType2D.Dynamic;
         tracebackCopy = traceback.ToArray();
@@ -82,8 +83,8 @@ public class EnemyStateFindBack : IState
                 RaycastHit2D hit = Physics2D.Raycast((Vector2)owner.GetComponent<BoxCollider2D>().bounds.center, dist);
                 if (hit.distance > dist.magnitude || hit.distance == 0)
                 {
-                    MonoBehaviour.print(owner.transform.position);
-                    MonoBehaviour.print(worldCoord);
+                    //MonoBehaviour.print(owner.transform.position);
+                    //MonoBehaviour.print(worldCoord);
                     goal = worldCoord;
                     for (int j = 0; j < i; j++)
                     {

@@ -69,7 +69,7 @@ public class Ghost_StatePosses : IState
 
         if (Input.GetButtonDown("Dash"))
         {
-            MonoBehaviour.print(inWall);
+            //MonoBehaviour.print(inWall);
             if (this.inWall == false)
             {
                 owner.BreakoutIdle();

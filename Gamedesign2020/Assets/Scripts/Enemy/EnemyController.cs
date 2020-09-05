@@ -36,8 +36,8 @@ public class EnemyController : MonoBehaviour
     
     [NonSerialized]
     public Vector3 goal;
-    
 
+    public GameObject StunStars;
 
 
     void Start()

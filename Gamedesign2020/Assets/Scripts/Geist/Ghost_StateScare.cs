@@ -44,8 +44,8 @@ public class Ghost_StateScare : IState
         {
             var dist = (i.transform.position - owner.transform.position).magnitude;
             if (dist < owner.scareRadius)
-            { 
-                //denke mal das macht lieber luci
+            {
+                i.GetComponent<EnemyController>().stateMachine.ChangeState(new EnemyStateStunned(i.GetComponent<EnemyController>()));
             }
         }
     }

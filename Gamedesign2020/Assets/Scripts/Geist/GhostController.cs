@@ -56,7 +56,7 @@ public class GhostController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(this.validDash);
+       // print(this.validDash);
         this.currentState = this.stateMachine.getCurrentState().Name;
         this.stateMachine.runStateUpdate();
     }
