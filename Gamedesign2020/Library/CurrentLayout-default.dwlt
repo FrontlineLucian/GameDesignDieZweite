@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 102, y: 242}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 159
+  controlID: 161
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_MinSize: {x: 579, y: 513}
   m_MaxSize: {x: 14002, y: 18063}
   vertical: 0
-  controlID: 184
+  controlID: 186
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -198,7 +198,7 @@ MonoBehaviour:
   m_MinSize: {x: 303, y: 513}
   m_MaxSize: {x: 10001, y: 18063}
   vertical: 1
-  controlID: 157
+  controlID: 159
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 303, y: 242}
   m_MaxSize: {x: 8003, y: 8042}
   vertical: 0
-  controlID: 158
+  controlID: 160
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -480,9 +480,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: e6400000224d00002a4d0000264d00001e4d0000
-      m_LastClickedID: 16614
-      m_ExpandedIDs: 16fbffff1cfbffff32fbffff
+      m_SelectedIDs: 1c470000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 7ae2ffff82f6ffffb2f7ffffe2f8ffff32fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -543,9 +543,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.3406353, y: -1.824482, z: -6.7922564}
+    m_Target: {x: -3.348738, y: -1.1988922, z: -8.24765}
     speed: 2
-    m_Value: {x: -1.3940675, y: -1.7896477, z: -6.780433}
+    m_Value: {x: -3.3593197, y: -1.0462117, z: -8.223452}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -596,9 +596,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 2.7421308
+    m_Target: 6.416278
     speed: 2
-    m_Value: 2.6240485
+    m_Value: 6.7186155
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -888,21 +888,21 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites/Wald Objects
+    - Assets/Scenes
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sprites/Wald Objects
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\lukas\Desktop\GameDesignIstEinDummerHurenSohnDrecksHaufen\GameDesignDieZweite\Gamedesign2020
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 158}
-    m_SelectedIDs: ce440000
-    m_LastClickedID: 17614
-    m_ExpandedIDs: 000000009a4400009c4400009e440000a0440000b444000000ca9a3b
+    scrollPos: {x: 0, y: 175}
+    m_SelectedIDs: a0440000
+    m_LastClickedID: 17568
+    m_ExpandedIDs: 000000009a4400009c4400009e440000a0440000a2440000be44000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -930,7 +930,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009a4400009c4400009e440000a0440000
+    m_ExpandedIDs: 000000009a4400009c4400009e440000a0440000a2440000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -957,7 +957,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300000043000026d2ffff763f0000b03f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
