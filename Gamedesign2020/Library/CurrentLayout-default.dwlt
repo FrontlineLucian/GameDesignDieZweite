@@ -480,9 +480,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 1c470000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 7ae2ffff82f6ffffb2f7ffffe2f8ffff32fbffff
+      m_ExpandedIDs: 32fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -543,9 +543,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -3.348738, y: -1.1988922, z: -8.24765}
+    m_Target: {x: -3.295424, y: -1.1923786, z: -9.328762}
     speed: 2
-    m_Value: {x: -3.3593197, y: -1.0462117, z: -8.223452}
+    m_Value: {x: -3.316127, y: -1.1901405, z: -9.319815}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -596,9 +596,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 6.416278
+    m_Target: 2.3749504
     speed: 2
-    m_Value: 6.7186155
+    m_Value: 2.486859
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -888,21 +888,21 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Sprites/Wald Objects
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Sprites/Wald Objects
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\lukas\Desktop\GameDesignIstEinDummerHurenSohnDrecksHaufen\GameDesignDieZweite\Gamedesign2020
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 175}
-    m_SelectedIDs: a0440000
-    m_LastClickedID: 17568
-    m_ExpandedIDs: 000000009a4400009c4400009e440000a0440000a2440000be44000000ca9a3b
+    scrollPos: {x: 0, y: 158}
+    m_SelectedIDs: 10450000
+    m_LastClickedID: 17680
+    m_ExpandedIDs: 00000000ea440000ec440000ee440000f0440000f244000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -930,7 +930,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009a4400009c4400009e440000a0440000a2440000
+    m_ExpandedIDs: 00000000ea440000ec440000ee440000f0440000f2440000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -957,8 +957,8 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c62300000043000026d2ffff763f0000b03f0000
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c62300000043000026d2ffff763f0000b03f000022450000a04500006e450000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
