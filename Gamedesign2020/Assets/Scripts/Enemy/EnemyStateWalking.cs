@@ -44,7 +44,7 @@ public class EnemyStateWalking : IState
         this.pathCreator = owner.pathCreator;
         this.animator = owner.animator;
         this.rigidbody = owner.rb;
-        this.speed = owner.speed;
+        this.speed = owner.pathSpeed;
         this.movement = owner.movement;        
         this.gridObject = owner.gridObject;
         this.visionRange = owner.visionRange;
@@ -58,8 +58,8 @@ public class EnemyStateWalking : IState
         this.animator.Play("WalkAnimations", -1, 0);
         this.owner.rb.bodyType = RigidbodyType2D.Dynamic;
         owner.isOnPath = true;
-        owner.speed = 1.5f;
-        speed = 1.5f;
+       
+        
         //----------------------------------------------------------------------------------------------WICHTIG
         //initialisieren der Pfade für den editor, sonst spackt alles
         for(int i = 0; i < pathCreator.Length; i++)
@@ -82,7 +82,7 @@ public class EnemyStateWalking : IState
     public void stateExit()
     {
         owner.isOnPath = false;
-        owner.speed = 0.5f;
+        
         if (endOfPath) this.findBack = false;
         else
         {

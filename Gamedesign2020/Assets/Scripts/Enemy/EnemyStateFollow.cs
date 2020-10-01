@@ -28,7 +28,7 @@ public class EnemyStateFollow : IState
         this.owner = owner;
         this.animator = owner.animator;
         this.rigidbody = owner.rb;
-        this.speed = owner.speed;
+        this.speed = owner.followSpeed;
         this.gridObject = owner.gridObject;
         this.visionRange = owner.visionRange;
         this.target = owner.target;

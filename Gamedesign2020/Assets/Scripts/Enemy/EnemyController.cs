@@ -22,8 +22,8 @@ public class EnemyController : MonoBehaviour
     [NonSerialized]
     public Stack<Vector2> traceback=new Stack<Vector2>();
     public StateMachine stateMachine = new StateMachine();
-    public float speed = .5f;
-
+    public float followSpeed = .5f;
+    public float pathSpeed = 1.5f;
     public PathCreator[] pathCreator;
     public bool[] patrol;
     public GameObject Sprite;
@@ -66,7 +66,7 @@ public class EnemyController : MonoBehaviour
         this.stateMachine.runStateFixedUpdate();
         if (!isOnPath)
         {
-            this.rb.MovePosition(this.rb.position + this.movement * speed * Time.fixedDeltaTime);
+            this.rb.MovePosition(this.rb.position + this.movement * followSpeed * Time.fixedDeltaTime);
         }
 
 
