@@ -6,9 +6,7 @@ public class haesslicherFaktor : MonoBehaviour
 {
     public float eigentlicheIntensity;
     public float cryFactor = 1;
-    public float GhostInfluence = 1;
-    public float levelEndFaktor = 1;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +17,6 @@ public class haesslicherFaktor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.gameObject.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().intensity = eigentlicheIntensity * cryFactor * GhostInfluence * levelEndFaktor;
+        this.gameObject.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().intensity = eigentlicheIntensity * cryFactor;
     }
 }

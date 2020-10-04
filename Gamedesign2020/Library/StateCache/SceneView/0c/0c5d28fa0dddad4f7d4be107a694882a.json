@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":true},"in2DMode":true,"pivot":{"x":0.14158618450164796,"y":1.6038804054260255,"z":-29.557422637939454},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":5.5021843910217289,"orthographic":true}
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":true},"in2DMode":true,"pivot":{"x":-4.7877702713012699,"y":0.8602648973464966,"z":-12.616623878479004},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":2.4295191764831545,"orthographic":true}
+>>>>>>> parent of 38413894... elevator
