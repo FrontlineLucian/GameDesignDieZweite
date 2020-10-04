@@ -73,13 +73,13 @@ public class GhostController : MonoBehaviour
 
         foreach (GameObject light in lights)
         {
-            var rank = light.GetComponent<LightRank>();
+            var rank = light.GetComponent<haesslicherFaktor>();
             var dist = Vector2.Distance(transform.position, light.transform.position);
             if (dist < influenceRange)
             {
-                rank.influence = Mathf.Clamp(influenceRange/dist, 1, 2);
+                rank.GhostInfluence = Mathf.Clamp(influenceRange/dist, 1, 2);
             } else {
-                rank.influence = 1;
+                rank.GhostInfluence = 1;
             }
         }
 
