@@ -11,10 +11,7 @@ GameObject:
   - component: {fileID: 4617995303197037966}
   - component: {fileID: 560998891989471121}
   - component: {fileID: 7861888493959171936}
-<<<<<<< HEAD
   - component: {fileID: -2088847960601550312}
-=======
->>>>>>> parent of 38413894... elevator
   m_Layer: 0
   m_Name: Druckplatte
   m_TagString: Untagged
@@ -113,7 +110,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
-<<<<<<< HEAD
 --- !u!114 &-2088847960601550312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,5 +123,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Trigger: []
-=======
->>>>>>> parent of 38413894... elevator
