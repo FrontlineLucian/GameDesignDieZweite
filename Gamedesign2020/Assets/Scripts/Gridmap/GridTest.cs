@@ -39,11 +39,11 @@ public class GridTest
 
 
     //Grid Constructor mit Debug Informationen
-  public GridTest(int width, int height, Tilemap tilemap)
+  public GridTest( Tilemap tilemap)
     {
         this.parent = tilemap.gameObject.transform.parent;
-        this.width = width;
-        this.height = height;
+        int width = tilemap.size.x;
+        int height = tilemap.size.y;
         this.cellSize = tilemap.cellSize.x * tilemap.transform.localScale.x;
         this.originPos = (Vector3)tilemap.origin*cellSize;
         gridArray = new int[width, height];
