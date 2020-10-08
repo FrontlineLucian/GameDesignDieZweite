@@ -11,6 +11,8 @@ TagManager:
   - GLOBALLIGHT
   - ENEMY
   - BRIDGE
+  - wallCollision
+  - KIND
   layers:
   - Default
   - TransparentFX
