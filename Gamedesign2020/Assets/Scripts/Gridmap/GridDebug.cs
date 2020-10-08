@@ -11,9 +11,11 @@ public class GridDebug : MonoBehaviour
     public GridTest grid;
     public GameObject[] moveables;
     public GameObject[] lights;
+    public GameObject[] bridges;
     public float cellSize = .32f;
     public Tilemap tilemap;
     public Tile CollisionTile;
+    public Tile LochTile;
     public GameObject Collidier;
     public GameObject Trigger;
     public GameObject TriggerGrid;
@@ -74,16 +76,19 @@ public class GridDebug : MonoBehaviour
         //zur Laufzeit GameObjects mit gesetztem Tag sammeln
         moveables = grid.CollectTaggedObject("MOVEABLE");
         lights = GameObject.FindGameObjectsWithTag("LIGHTSOURCE");
+        bridges = GameObject.FindGameObjectsWithTag("BRIDGE");
         //alte GridWerte der Obstacles resetten
         grid.ResetMoveables();
         //für alle gefundenen Objekte collider abfragen und im grid entsprechend Werte setzen
         PlaceMovables();
+        PlaceHoles();
+        PlaceBridges();
         //alte Lichtwerte im Grid decayen lassen
         grid.Decay(2);
 
         PlaceLights();
         GameObject kind = GameObject.FindGameObjectWithTag("possesable");
-        //print(grid.GetValue(kind.transform.position));
+        print(grid.GetValue(kind.transform.position));
 
     }
 
@@ -125,15 +130,43 @@ public class GridDebug : MonoBehaviour
                 {
                     grid.SetValue(x, y, 0);
                 }
+                if (tilemap.GetTile(new Vector3Int(x + (tilemap.origin.x), y + (tilemap.origin.y), 0)) == LochTile)
+                {
+                    grid.SetValue(x, y, -2);
+                }
             }
         }
     }
-
-    public void PlaceMovables()
+    public void PlaceHoles()
     {
-        for (int i = 0; i < moveables.Length; i++)
+
+        for (int x = 0; x <= grid.width; x++)
         {
-            BoxCollider2D collider = moveables[i].GetComponent<BoxCollider2D>();
+            if (x > tilemap.cellBounds.size.x)
+            {
+                continue;
+            }
+            for (int y = 0; y <= grid.height; y++)
+            {
+                if (y > tilemap.cellBounds.size.y)
+                {
+                    continue;
+                }
+
+
+                
+                if (tilemap.GetTile(new Vector3Int(x + (tilemap.origin.x), y + (tilemap.origin.y), 0)) == LochTile)
+                {
+                    grid.SetValue(x, y, -2);
+                }
+            }
+        }
+    }
+    public void PlaceBridges()
+    {
+        for (int i = 0; i < bridges.Length; i++)
+        {
+            BoxCollider2D collider = bridges[i].GetComponent<BoxCollider2D>();
             if (collider != null)
             {
                 Vector2 size = collider.bounds.size;
@@ -149,7 +182,47 @@ public class GridDebug : MonoBehaviour
 
                     for (int _y = y; _y <= y2; _y++)
                     {
-                        if (grid.GetValue(_x, _y) != 0)
+
+                        if (grid.GetValue(_x, _y) ==-2 )
+                        {
+                            grid.SetValue(_x, _y, 1);
+                            
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+    public void PlaceMovables()
+    {
+        for (int i = 0; i < moveables.Length; i++)
+        {
+            BoxCollider2D collider = moveables[i].GetComponent<BoxCollider2D>();
+            Light2D[] potentialLights = moveables[i].GetComponentsInChildren<Light2D>();
+            bool isLight = false;
+            if (potentialLights.Length>0)
+            {
+                MonoBehaviour.print("hier is hell");
+                isLight = true;
+            }
+            if (collider != null)
+            {
+                Vector2 size = collider.bounds.size;
+
+                Vector3 originBoundingBox = collider.bounds.center - (new Vector3(size.x, size.y, 0) * 0.5f);
+                int x, y;
+                grid.GetGridCoord(originBoundingBox, out x, out y);
+                int x2, y2;
+                grid.GetGridCoord(originBoundingBox + new Vector3(size.x, size.y, 0), out x2, out y2);
+
+                for (int _x = x; _x <= x2; _x++)
+                {
+
+                    for (int _y = y; _y <= y2; _y++)
+                    {
+                        
+                        if (grid.GetValue(_x, _y) != 0&&isLight==false)
                         {
                             grid.SetValue(_x, _y, -1);
                         }

@@ -22,7 +22,11 @@ public class GridTest
     public bool movefromUsed = false;
     public Transform parent;
     public bool debug = false;
-    
+    public GameObject[] bridges;
+    BoxCollider2D[] collArrayB;
+    public GameObject[] lights;
+    BoxCollider2D[] collArrayL;
+
     //debug kram
     public TextMesh[,] debugTextArray;
 
@@ -242,7 +246,17 @@ public class GridTest
 
         Vector3 center = centerWorld;
         Vector3 maxLight = new Vector3(x,y,1);
-        
+        bridges = GameObject.FindGameObjectsWithTag("BRIDGE");
+        if (bridges != null) { 
+
+            for (int z = 0; z < bridges.Length; z++)
+            {
+            
+              collArrayB=bridges[z].GetComponentsInParent<BoxCollider2D>();
+
+             }
+        }
+        lights = GameObject.FindGameObjectsWithTag("LIGHTSOURCE");
         
         Vector2 centerGrid = new Vector2(x, y);
         for (int i = x - (visionRange + 1); i < Mathf.Min(x + (visionRange + 1), width); i++)
@@ -257,8 +271,50 @@ public class GridTest
                 Vector2 distGrid = currGrid - centerGrid;
                 if ((distGrid.magnitude <= visionRange&& GetValue(i, j)>maxLight.z)||(distGrid.magnitude <= visionRange && GetValue(i, j)==maxLight.z&&maxLight.z>1&&distGrid.magnitude>(new Vector2(maxLight.x,maxLight.y)-centerGrid).magnitude))
                 {
+
+                    if (collArrayB != null)
+                    {
+                        for (int z = 0; z < collArrayB.Length; z++)
+                        {
+                            collArrayB[z].enabled = false;
+                            
+                        }
+                    }
+                    if (lights != null)
+                    {
+                        
+                        for (int z = 0; z < lights.Length; z++)
+                        {
+                            if (lights[z].GetComponentInParent<BoxCollider2D>() != null)
+                            {
+                                lights[z].GetComponentInParent<BoxCollider2D>().enabled = false;
+                                MonoBehaviour.print("henlo");
+                            }
+                        }
+                    }
                     kind.GetComponent<BoxCollider2D>().enabled = !kind.GetComponent<BoxCollider2D>().enabled;
                     RaycastHit2D hit=Physics2D.Raycast(new Vector2(center.x,center.y), new Vector2 (dist.x,dist.y));
+
+                    if (collArrayB != null)
+                    {
+                        for (int z = 0; z < collArrayB.Length; z++)
+                        {
+                            collArrayB[z].enabled = true;
+
+                        }
+                    }
+                    if (lights != null)
+                    {
+
+                        for (int z = 0; z < lights.Length; z++)
+                        {
+                            if (lights[z].GetComponentInParent<BoxCollider2D>() != null)
+                            {
+                                lights[z].GetComponentInParent<BoxCollider2D>().enabled = true;
+                                MonoBehaviour.print("tüdelü");
+                            }
+                        }
+                    }
                     kind.GetComponent<BoxCollider2D>().enabled = !kind.GetComponent<BoxCollider2D>().enabled;
 
 
@@ -266,6 +322,7 @@ public class GridTest
 
                     if (hit.distance > dist.magnitude||hit.distance==0)
                     {
+                        Debug.DrawRay(new Vector2(center.x, center.y), new Vector2(dist.x, dist.y));
 
                         maxLight = new Vector3(i, j, GetValue(i, j));
                     }

@@ -10,6 +10,7 @@ TagManager:
   - possesable
   - GLOBALLIGHT
   - ENEMY
+  - BRIDGE
   layers:
   - Default
   - TransparentFX
