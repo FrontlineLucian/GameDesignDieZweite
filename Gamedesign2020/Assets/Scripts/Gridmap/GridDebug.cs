@@ -32,8 +32,8 @@ public class GridDebug : MonoBehaviour
     void Start()
     {
         
-        grid = new GridTest(50, 50, tilemap);
-        
+        grid = new GridTest( tilemap);
+        print(tilemap.size.x);
         PlaceTilemap();
         PlaceColliders();
         //if (moveables == null)
@@ -87,8 +87,8 @@ public class GridDebug : MonoBehaviour
         grid.Decay(2);
 
         PlaceLights();
-        GameObject kind = GameObject.FindGameObjectWithTag("possesable");
-        print(grid.GetValue(kind.transform.position));
+        //GameObject kind = GameObject.FindGameObjectWithTag("possesable");
+        //print(grid.GetValue(kind.transform.position));
 
     }
 
@@ -96,7 +96,7 @@ public class GridDebug : MonoBehaviour
     {
         for (int x = 0; x <= grid.width; x++)
         {
-            for (int y = 0; y <= grid.height; y++)
+            for (int y = 0; y <= grid.height; y++) 
             {
                 if (grid.GetValue(x,y) == 0)
                 {
@@ -203,7 +203,6 @@ public class GridDebug : MonoBehaviour
             bool isLight = false;
             if (potentialLights.Length>0)
             {
-                MonoBehaviour.print("hier is hell");
                 isLight = true;
             }
             if (collider != null)

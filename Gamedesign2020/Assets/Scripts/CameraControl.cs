@@ -62,12 +62,10 @@ public class CameraControl : MonoBehaviour
         {
             case "FollowGhost":
                 goal = new Vector3(ghost.transform.position.x, ghost.transform.position.y, -10);
-                print("Ghost");
             break;
 
             case "FollowChild":
                 goal = new Vector3(child.transform.position.x, child.transform.position.y, -10);
-                print("Child");
             break;
 
         }

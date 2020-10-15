@@ -39,11 +39,14 @@ public class GridTest
 
 
     //Grid Constructor mit Debug Informationen
-  public GridTest(int width, int height, Tilemap tilemap)
+  public GridTest(Tilemap tilemap)
     {
         this.parent = tilemap.gameObject.transform.parent;
-        this.width = width;
-        this.height = height;
+        width = tilemap.size.x;
+        height = tilemap.size.y;
+
+        MonoBehaviour.print(width);
+
         this.cellSize = tilemap.cellSize.x * tilemap.transform.localScale.x;
         this.originPos = (Vector3)tilemap.origin*cellSize;
         gridArray = new int[width, height];
@@ -288,7 +291,6 @@ public class GridTest
                             if (lights[z].GetComponentInParent<BoxCollider2D>() != null)
                             {
                                 lights[z].GetComponentInParent<BoxCollider2D>().enabled = false;
-                                MonoBehaviour.print("henlo");
                             }
                         }
                     }
@@ -311,7 +313,6 @@ public class GridTest
                             if (lights[z].GetComponentInParent<BoxCollider2D>() != null)
                             {
                                 lights[z].GetComponentInParent<BoxCollider2D>().enabled = true;
-                                MonoBehaviour.print("tüdelü");
                             }
                         }
                     }
