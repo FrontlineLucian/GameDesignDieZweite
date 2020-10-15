@@ -15,6 +15,7 @@ TagManager:
   - KIND
   - GHOST
   - CAMERA
+  - ELEVATOR
   layers:
   - Default
   - TransparentFX

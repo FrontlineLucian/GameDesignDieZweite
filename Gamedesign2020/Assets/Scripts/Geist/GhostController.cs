@@ -89,7 +89,7 @@ public class GhostController : MonoBehaviour
             var dist = Vector2.Distance(transform.position, light.transform.position);
             if (dist < influenceRange)
             {
-                rank.GhostInfluence = Mathf.Clamp(influenceRange/dist, 1, 2);
+                rank.GhostInfluence = Mathf.Min(Mathf.Max(influenceRange/dist, 1), 2);
             } else {
                 rank.GhostInfluence = 1;
             }

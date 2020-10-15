@@ -5,6 +5,7 @@ using UnityEngine;
 public class ElevatorOpen : MonoBehaviour
 {
     private Animator animator;
+    
 
     void Start()
     {
@@ -18,10 +19,12 @@ public class ElevatorOpen : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "KIND")
+        if (collider.gameObject.tag == "KIND" )
         {
+            
             if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("ElevatorClosed")){
                 this.animator.Play("Elevator", -1, 0);
+                
             }
         }
 

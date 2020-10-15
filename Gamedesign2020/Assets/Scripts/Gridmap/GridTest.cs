@@ -26,6 +26,8 @@ public class GridTest
     BoxCollider2D[] collArrayB;
     public GameObject[] lights;
     BoxCollider2D[] collArrayL;
+    public GameObject[] Elevators;
+    BoxCollider2D[] collArrayE;
 
     //debug kram
     public TextMesh[,] debugTextArray;
@@ -250,6 +252,17 @@ public class GridTest
         Vector3 center = centerWorld;
         Vector3 maxLight = new Vector3(x,y,1);
         bridges = GameObject.FindGameObjectsWithTag("BRIDGE");
+        Elevators = GameObject.FindGameObjectsWithTag("ELEVATOR");
+        if (Elevators != null)
+        {
+
+            for (int z = 0; z <Elevators.Length; z++)
+            {
+
+                collArrayE = Elevators[z].GetComponentsInChildren<BoxCollider2D>();
+                
+            }
+        }
         if (bridges != null) { 
 
             for (int z = 0; z < bridges.Length; z++)
@@ -283,6 +296,14 @@ public class GridTest
                             
                         }
                     }
+                    if (collArrayE != null)
+                    {
+                        for (int z = 0; z < collArrayE.Length; z++)
+                        {
+                            collArrayE[z].enabled = false;
+
+                        }
+                    }
                     if (lights != null)
                     {
                         
@@ -302,6 +323,14 @@ public class GridTest
                         for (int z = 0; z < collArrayB.Length; z++)
                         {
                             collArrayB[z].enabled = true;
+
+                        }
+                    }
+                    if (collArrayE != null)
+                    {
+                        for (int z = 0; z < collArrayE.Length; z++)
+                        {
+                            collArrayE[z].enabled = true;
 
                         }
                     }

@@ -39,6 +39,7 @@ public class KindControllerRaycast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(gridObject.grid.GetValue(this.transform.position));
         //print(this.stateMachine.getCurrentState());
         this.stateMachine.runStateUpdate();
         if (this.stateMachine.getCurrentState().Name != "KindStateCry")
