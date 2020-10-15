@@ -13,6 +13,7 @@ public class LoadNextLvl : MonoBehaviour
     private GameObject[] lights;
     private GameObject[] globalLights;
     private GameObject[] player;
+    private GameObject cam;
 
     void Start()
     {
@@ -23,6 +24,9 @@ public class LoadNextLvl : MonoBehaviour
     void Update()
     {
         if (active) {
+            cam = GameObject.FindGameObjectWithTag("CAMERA");
+            cam.GetComponent<CameraControl>().setMode("FollowChild");
+            cam.GetComponent<CameraControl>().setLock(true);
 
             var child = transform.GetChild(0).transform;
             if (child.localScale.x > 1)

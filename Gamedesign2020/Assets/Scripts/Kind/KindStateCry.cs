@@ -65,7 +65,7 @@ public class KindStateCry : IState
         foreach (GameObject Objekt in globalLights)
         {
 
-            if (Objekt.GetComponent<haesslicherFaktor>().cryFactor >= 0.2f)
+            if (Objekt.GetComponent<haesslicherFaktor>().cryFactor >= 0.6f)
             {
                 Objekt.GetComponent<haesslicherFaktor>().cryFactor = Objekt.GetComponent<haesslicherFaktor>().cryFactor - 0.1f * Time.deltaTime;
             }

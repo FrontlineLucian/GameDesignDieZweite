@@ -46,9 +46,12 @@ public class GhostController : MonoBehaviour
     private bool validDash = true;
     private bool moveableDash = true;
 
+    private GameObject cam;
+
     // Start is called before the first frame update
     void Start()
-    {   
+    {
+        cam = GameObject.FindGameObjectWithTag("CAMERA");
         this.animator = Sprite.GetComponent<Animator>();
         this.stateMachine.ChangeState(new Ghost_StateIdle(this));
     }
@@ -59,6 +62,15 @@ public class GhostController : MonoBehaviour
        // print(this.validDash);
         this.currentState = this.stateMachine.getCurrentState().Name;
         this.stateMachine.runStateUpdate();
+
+        if (Input.GetButton("switchCam"))
+        {
+            cam.GetComponent<CameraControl>().setMode("FollowChild");
+        }
+        else {
+            cam.GetComponent<CameraControl>().setMode("FollowGhost");
+        }
+
     }
 
     void FixedUpdate()
