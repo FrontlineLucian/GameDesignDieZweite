@@ -24,7 +24,9 @@ public class KindControllerRaycast : MonoBehaviour
     private GameObject[] obj ;
     private GameObject[] globalLights;
 
-
+    public float cryFak = 1;
+    private CameraControl cam;
+    public float deathAt = 0.06f;
 
 
     void Start()
@@ -34,6 +36,7 @@ public class KindControllerRaycast : MonoBehaviour
         this.stateMachine.ChangeState(new Kind_StateWalkingRaycast(this));
         obj = GameObject.FindGameObjectsWithTag("LIGHTSOURCE");
         globalLights=GameObject.FindGameObjectsWithTag("GLOBALLIGHT");
+        cam = GameObject.FindGameObjectWithTag("CAMERA").GetComponent<CameraControl>();
     }
 
     // Update is called once per frame
@@ -44,29 +47,29 @@ public class KindControllerRaycast : MonoBehaviour
         this.stateMachine.runStateUpdate();
         if (this.stateMachine.getCurrentState().Name != "KindStateCry")
         {
+            cryFak += 0.1f * Time.deltaTime;
+            cryFak = Mathf.Min(cryFak, 1);
 
             foreach (GameObject Objekt in obj)
             {
-
-                if (Objekt.GetComponent<haesslicherFaktor>().cryFactor <= 0.9f)
-                {
-                    Objekt.GetComponent<haesslicherFaktor>().cryFactor = Objekt.GetComponent<haesslicherFaktor>().cryFactor + 0.1f * Time.deltaTime;
-                }
-                else Objekt.GetComponent<haesslicherFaktor>().cryFactor = 1;
+                Objekt.GetComponent<haesslicherFaktor>().cryFactor = cryFak;
             }
             foreach (GameObject Objekt in globalLights)
             {
-
-                if (Objekt.GetComponent<haesslicherFaktor>().cryFactor <= 0.9f)
-                {
-                    Objekt.GetComponent<haesslicherFaktor>().cryFactor = Objekt.GetComponent<haesslicherFaktor>().cryFactor + 0.1f * Time.deltaTime;
-                }
-                else Objekt.GetComponent<haesslicherFaktor>().cryFactor = 1;
+                Objekt.GetComponent<haesslicherFaktor>().cryFactor = cryFak;
             }
 
         
         }
-        
+
+        cam.darknessStage = Mathf.RoundToInt( Mathf.Abs(cryFak - 1) * 4);
+        if (cryFak < deathAt)
+        {
+            print("DARK");
+            cam.setMode("death");
+            cam.setLock(true);
+        }
+
 
     }
     private void FixedUpdate()

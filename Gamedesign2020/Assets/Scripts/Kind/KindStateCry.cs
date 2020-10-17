@@ -56,20 +56,19 @@ public class KindStateCry : IState
 
     public void stateUpdate()
     {
-        foreach (GameObject Objekt in obj){
+        owner.cryFak += (0 - owner.cryFak) / 10 * Time.deltaTime;
+        owner.cryFak = Mathf.Max(owner.cryFak, 0);
 
-            if (Objekt.GetComponent<haesslicherFaktor>().cryFactor >= 0.1f) {
-                Objekt.GetComponent<haesslicherFaktor>().cryFactor = Objekt.GetComponent<haesslicherFaktor>().cryFactor - 0.1f*Time.deltaTime;
-            }
+        foreach (GameObject Objekt in obj)
+        {
+            Objekt.GetComponent<haesslicherFaktor>().cryFactor = Mathf.Max(0.1f, owner.cryFak);
         }
         foreach (GameObject Objekt in globalLights)
         {
-
-            if (Objekt.GetComponent<haesslicherFaktor>().cryFactor >= 0.6f)
-            {
-                Objekt.GetComponent<haesslicherFaktor>().cryFactor = Objekt.GetComponent<haesslicherFaktor>().cryFactor - 0.1f * Time.deltaTime;
-            }
+            Objekt.GetComponent<haesslicherFaktor>().cryFactor = Mathf.Max(0.6f, owner.cryFak);
         }
+
+
         this.isCaught = owner.isCaught;
         movement = new Vector2(0, 0);
 
