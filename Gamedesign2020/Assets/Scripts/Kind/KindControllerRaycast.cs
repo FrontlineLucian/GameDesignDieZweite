@@ -27,6 +27,7 @@ public class KindControllerRaycast : MonoBehaviour
     public float cryFak = 1;
     private CameraControl cam;
     public float deathAt = 0.06f;
+    public bool dead = false;
 
 
     void Start()

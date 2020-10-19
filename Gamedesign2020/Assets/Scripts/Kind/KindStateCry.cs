@@ -14,6 +14,7 @@ public class KindStateCry : IState
     private bool isCaught;
     private GameObject[] obj = GameObject.FindGameObjectsWithTag("LIGHTSOURCE");
     private GameObject[] globalLights= GameObject.FindGameObjectsWithTag("GLOBALLIGHT");
+    private bool dead;
 
     public KindStateCry(KindControllerRaycast owner)
     {
@@ -23,7 +24,7 @@ public class KindStateCry : IState
         this.gridObject = owner.gridObject;
         this.visionRange = owner.visionRange;
         this.isCaught = owner.isCaught;
-
+        this.dead = owner.dead;
     }
     public void stateExit()
     {
@@ -56,6 +57,11 @@ public class KindStateCry : IState
 
     public void stateUpdate()
     {
+        if (owner.cryFak <= owner.deathAt)
+        {
+            owner.dead = true;
+            dead = true;
+        }
         owner.cryFak += (0 - owner.cryFak) / 10 * Time.deltaTime;
         owner.cryFak = Mathf.Max(owner.cryFak, 0);
 
@@ -77,14 +83,15 @@ public class KindStateCry : IState
 
 
         direction = new Vector2(goal.x, goal.y) - new Vector2(centerBoundingBox.x, centerBoundingBox.y);
-
-        if (direction.magnitude > 0.3 && !isCaught)
+        if (!dead)
         {
+            if (direction.magnitude > 0.3 && !isCaught)
+            {
 
-            owner.stateMachine.ChangeState(new Kind_StateWalkingRaycast(this.owner));
+                owner.stateMachine.ChangeState(new Kind_StateWalkingRaycast(this.owner));
+            }
+            if (goal.z > 1 && !isCaught) owner.stateMachine.ChangeState(new KindStateIdle(this.owner));
         }
-        if(goal.z>1&&!isCaught) owner.stateMachine.ChangeState(new KindStateIdle(this.owner));
-
     }
 
 
