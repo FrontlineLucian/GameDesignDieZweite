@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 7537396050257909427, guid: f5306f6e003bd2446b8dd950989c23bb,
         type: 3}
       propertyPath: m_Name
-      value: Box MoveableObject
+      value: Box MoveableObject Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7537396050257909429, guid: f5306f6e003bd2446b8dd950989c23bb,
         type: 3}
