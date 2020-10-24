@@ -16,6 +16,7 @@ TagManager:
   - GHOST
   - CAMERA
   - ELEVATOR
+  - LOCH
   layers:
   - Default
   - TransparentFX

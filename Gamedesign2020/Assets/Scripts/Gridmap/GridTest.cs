@@ -28,6 +28,8 @@ public class GridTest
     BoxCollider2D[] collArrayL;
     public GameObject[] Elevators;
     BoxCollider2D[] collArrayE;
+    public GameObject[] holes;
+    
 
     //debug kram
     public TextMesh[,] debugTextArray;
@@ -253,6 +255,8 @@ public class GridTest
         Vector3 maxLight = new Vector3(x,y,1);
         bridges = GameObject.FindGameObjectsWithTag("BRIDGE");
         Elevators = GameObject.FindGameObjectsWithTag("ELEVATOR");
+        holes = GameObject.FindGameObjectsWithTag("LOCH");
+        
         if (Elevators != null)
         {
 
@@ -315,6 +319,17 @@ public class GridTest
                             }
                         }
                     }
+                    if (holes != null)
+                    {
+
+                        for (int z = 0; z < holes.Length; z++)
+                        {
+                            if (holes[z].GetComponent<BoxCollider2D>() != null&& holes[z].GetComponent<LochScript>().isActive)
+                            {
+                                holes[z].GetComponent<BoxCollider2D>().enabled = true;
+                            }
+                        }
+                    }
                     kind.GetComponent<BoxCollider2D>().enabled = !kind.GetComponent<BoxCollider2D>().enabled;
                     RaycastHit2D hit=Physics2D.Raycast(new Vector2(center.x,center.y), new Vector2 (dist.x,dist.y));
 
@@ -332,6 +347,17 @@ public class GridTest
                         {
                             collArrayE[z].enabled = true;
 
+                        }
+                    }
+                    if (holes != null)
+                    {
+
+                        for (int z = 0; z < holes.Length; z++)
+                        {
+                            if (holes[z].GetComponent<BoxCollider2D>() != null )
+                            {
+                                holes[z].GetComponent<BoxCollider2D>().enabled = false;
+                            }
                         }
                     }
                     if (lights != null)

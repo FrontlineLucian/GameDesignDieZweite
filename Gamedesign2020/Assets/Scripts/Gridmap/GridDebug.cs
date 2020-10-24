@@ -19,10 +19,12 @@ public class GridDebug : MonoBehaviour
     public GameObject Collidier;
     public GameObject Trigger;
     public GameObject TriggerGrid;
-    
+    public GameObject LochCollider;
 
 
-    
+
+
+
     private void Grid_OnGridValueChanged(object sender, GridTest.OnGridValueChangedEventArgs e)
     {
         
@@ -105,6 +107,13 @@ public class GridDebug : MonoBehaviour
 
                     var _trigger = Instantiate(Trigger, grid.GetOriginPosition() + new Vector3(x * grid.GetCellSize() + grid.GetCellSize() / 2, y * grid.GetCellSize() + grid.GetCellSize() / 2, 0), Quaternion.identity);
                     _trigger.transform.parent = TriggerGrid.transform;
+                }
+                if (grid.GetValue(x, y) == -2)
+                {
+                    var _collider = Instantiate(LochCollider, grid.GetOriginPosition() + new Vector3(x * grid.GetCellSize() + grid.GetCellSize() / 2, y * grid.GetCellSize() + grid.GetCellSize() / 2, 0), Quaternion.identity);
+                    _collider.transform.parent = grid.GetTilemapParent();
+                    _collider.gameObject.GetComponent<LochScript>().gridobject = this;
+                    
                 }
             }
         }

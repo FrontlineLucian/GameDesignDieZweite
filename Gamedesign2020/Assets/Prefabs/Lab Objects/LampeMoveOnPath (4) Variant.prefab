@@ -1,5 +1,26 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1259365908790749564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2823007250514860870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b275c3b78f8717c4cbc60f74a3247f67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathCreator: {fileID: 2823007250514860859}
+  autoUpdate: 1
+  roadWidth: 0.02
+  thickness: 0.15
+  flattenSurface: 0
+  roadMaterial: {fileID: 2100000, guid: 909ca8eb6d995894dbc6424cf3c258cc, type: 2}
+  undersideMaterial: {fileID: 2100000, guid: c1d8d882244c5344fa86a8fd23246f81, type: 2}
+  textureTiling: 1
+  meshHolder: {fileID: 0}
 --- !u!1001 &2036428514201406348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10,7 +31,7 @@ PrefabInstance:
     - target: {fileID: 4282798807129464092, guid: a5c8cc4f4d782e741a9a3915428d10da,
         type: 3}
       propertyPath: m_Name
-      value: LampeMoveOnPath (4)
+      value: LampeMoveOnPath (4) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4282798807129464095, guid: a5c8cc4f4d782e741a9a3915428d10da,
         type: 3}
@@ -85,3 +106,21 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5c8cc4f4d782e741a9a3915428d10da, type: 3}
+--- !u!1 &2823007250514860870 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4282798805834387658, guid: a5c8cc4f4d782e741a9a3915428d10da,
+    type: 3}
+  m_PrefabInstance: {fileID: 2036428514201406348}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2823007250514860859 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4282798805834387639, guid: a5c8cc4f4d782e741a9a3915428d10da,
+    type: 3}
+  m_PrefabInstance: {fileID: 2036428514201406348}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2823007250514860870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5ac92bc18f545cc84cd886ece82b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

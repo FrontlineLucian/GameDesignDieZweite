@@ -175,6 +175,8 @@ MonoBehaviour:
     type: 3}
   Trigger: {fileID: 328417952789395731, guid: 9fff18fd004afe041b0a59c74d1cc924, type: 3}
   TriggerGrid: {fileID: 1983528406201761510}
+  LochCollider: {fileID: 7117286688328181268, guid: 754d61b8b96424b4690efeca77eb473a,
+    type: 3}
 --- !u!1 &6107707695822896976
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,6 +264,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eigentlicheIntensity: 0
   cryFactor: 1
+  GhostInfluence: 1
+  levelEndFaktor: 1
+  lightRank: 1
 --- !u!1 &7664028162783488765
 GameObject:
   m_ObjectHideFlags: 0
