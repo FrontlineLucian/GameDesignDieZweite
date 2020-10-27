@@ -36,7 +36,7 @@ public class EnemyStateIdle : IState
         this.animator.Play("Idle", -1, 0);
         this.animator.SetFloat("hdir", hdir);
         this.animator.SetFloat("vdir", vdir);
-        this.owner.rb.bodyType = RigidbodyType2D.Kinematic;
+        this.owner.rb.bodyType = RigidbodyType2D.Dynamic;
         time = Time.time;
         
         
@@ -44,7 +44,7 @@ public class EnemyStateIdle : IState
     
     public void stateExit()
     {
-       
+        this.owner.rb.bodyType = RigidbodyType2D.Kinematic;
     }
 
     public void stateUpdate()
