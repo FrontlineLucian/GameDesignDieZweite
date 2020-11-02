@@ -167,7 +167,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   movement: {x: 0, y: 0}
-  speed: 2
+  followSpeed: 0.5
+  pathSpeed: 0.75
   pathCreator:
   - {fileID: 0}
   - {fileID: 0}

@@ -54,7 +54,10 @@ public class EnemyStateFollow : IState
     public void stateUpdate()
     {
         //methode um weg des Gegners zu tracken
-        crossCell(owner);
+        if (owner.findBack)
+        {
+            crossCell(owner);
+        }
         //MonoBehaviour.print(lastGoalInUse);
         if (!lastGoalInUse)
         {

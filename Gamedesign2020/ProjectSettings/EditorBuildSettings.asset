@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/LaborLevel2.unity
     guid: ff096ed995d8e8c4d95d2d731f55c7d5
   - enabled: 0
-    path: Assets/Scenes/testLabor.unity
+    path: Assets/Scenes/LaborLevel3.unity
     guid: 31bf72dc85c00b346acbea7b0adad9f7
   - enabled: 1
     path: Assets/Scenes/Waldlevel1.unity.unity

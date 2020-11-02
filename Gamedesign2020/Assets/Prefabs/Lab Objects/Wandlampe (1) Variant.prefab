@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 2558405150220407557, guid: 0b55d1f94a70afa4fae68f90347e0444,
         type: 3}
       propertyPath: lightrank
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8955713383759705000, guid: 0b55d1f94a70afa4fae68f90347e0444,
         type: 3}
@@ -76,7 +76,7 @@ PrefabInstance:
     - target: {fileID: 8955713383759705003, guid: 0b55d1f94a70afa4fae68f90347e0444,
         type: 3}
       propertyPath: m_Name
-      value: Wandlampe (1)
+      value: Wandlampe (1) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8955713385069470118, guid: 0b55d1f94a70afa4fae68f90347e0444,
         type: 3}
@@ -96,12 +96,12 @@ PrefabInstance:
     - target: {fileID: 8955713385069470118, guid: 0b55d1f94a70afa4fae68f90347e0444,
         type: 3}
       propertyPath: m_PointLightOuterRadius
-      value: 0.4803615
+      value: 0.27
       objectReference: {fileID: 0}
     - target: {fileID: 8955713385069470118, guid: 0b55d1f94a70afa4fae68f90347e0444,
         type: 3}
       propertyPath: m_PointLightInnerRadius
-      value: 0.27
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 8955713385069470118, guid: 0b55d1f94a70afa4fae68f90347e0444,
         type: 3}
@@ -111,7 +111,7 @@ PrefabInstance:
     - target: {fileID: 8955713385069470118, guid: 0b55d1f94a70afa4fae68f90347e0444,
         type: 3}
       propertyPath: m_Intensity
-      value: 0.96
+      value: 0.47
       objectReference: {fileID: 0}
     - target: {fileID: 8955713385069470121, guid: 0b55d1f94a70afa4fae68f90347e0444,
         type: 3}
@@ -132,6 +132,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9998767
+      objectReference: {fileID: 0}
+    - target: {fileID: 8955713385069470121, guid: 0b55d1f94a70afa4fae68f90347e0444,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b55d1f94a70afa4fae68f90347e0444, type: 3}

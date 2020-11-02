@@ -29,6 +29,7 @@ public class EnemyStateFindBack : IState
         this.owner.rb.bodyType = RigidbodyType2D.Dynamic;
         tracebackCopy = traceback.ToArray();
         goal = owner.transform.position;
+        if (traceback == null) owner.stateMachine.ChangeState(new EnemyStateIdle(owner));
        
     }
     public void stateExit()
