@@ -95,18 +95,6 @@ public class Ghost_StateWalking : IState
         {
             owner.BreakoutIdle();
         }
-
-        //Switch Form
-        if (owner.good_form != owner.SwitchForm())
-        {
-            if (owner.good_form)
-            {
-                this.animator.Play("WalkState", -1, 0);
-            }
-            else
-            {
-                this.animator.Play("WalkStateEvil", -1, 0);
-            }
-        }
+        owner.SwitchForm();
     }
 }

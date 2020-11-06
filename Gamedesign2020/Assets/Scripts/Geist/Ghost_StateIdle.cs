@@ -66,18 +66,8 @@ public class Ghost_StateIdle : IState
 
         owner.BreakoutChargeScare();
 
-        //Switch Form
-        if (owner.good_form != owner.SwitchForm())
-        { 
-            if (owner.good_form)
-            {
-                this.animator.Play("IdleState", -1, 0);
-            }
-            else
-            {
-                this.animator.Play("IdleStateEvil", -1, 0);
-            }
-        }
+        owner.SwitchForm();
+
 
     }
 }

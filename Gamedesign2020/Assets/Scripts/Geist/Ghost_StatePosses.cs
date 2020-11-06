@@ -42,6 +42,8 @@ public class Ghost_StatePosses : IState
         this.owner.hitbox.enabled = false;
         this.goalPos = goalTransform.position;
 
+        owner.animator.Play("PossesState", -1, 0);
+
         if (this.goalRb != null)
         {
             this.goalRb.bodyType = RigidbodyType2D.Dynamic;
@@ -63,6 +65,11 @@ public class Ghost_StatePosses : IState
 
         owner.movement = vec2;
 
+        if (owner.movement.magnitude > 0)
+        {
+            owner.animator.SetFloat("hDir", owner.movement.x);
+            owner.animator.SetFloat("vDir", owner.movement.y);
+        }
 
         this.goalPos = this.goalTransform.position;
         //To Idle State

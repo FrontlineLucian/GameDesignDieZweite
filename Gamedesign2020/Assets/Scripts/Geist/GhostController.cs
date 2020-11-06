@@ -126,10 +126,10 @@ public class GhostController : MonoBehaviour
         {
             if (Input.GetButtonDown("Switch"))
             {
-                this.good_form = !this.good_form;
+                stateMachine.ChangeState(new Ghost_StateSwitch(this));
             }
         }
-        return this.good_form;
+        return !this.good_form;
     }
 
     public bool BreakoutDash()

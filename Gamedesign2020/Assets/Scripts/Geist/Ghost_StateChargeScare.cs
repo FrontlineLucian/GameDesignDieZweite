@@ -41,6 +41,7 @@ public class Ghost_StateChargeScare : IState
     {
         this.startTime = Time.time;
         rangeCircle = (GameObject)MonoBehaviour.Instantiate(rangeCircle, owner.transform.position, Quaternion.identity);
+    
     }
 
     public void stateOnTriggerEnter(Collider2D collision)
