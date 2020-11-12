@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\Gridmap\GridTest.cs" />
     <Compile Include="Assets\Scripts\Geist\Ghost_StateWalking.cs" />
     <Compile Include="Assets\Scripts\Geist\Ghost_StateScare.cs" />
+    <Compile Include="Assets\Scripts\Geist\Ghost_StateSwitch.cs" />
     <Compile Include="Assets\Scripts\State Machine\IState.cs" />
     <Compile Include="Assets\Scripts\Kind\KindStateIdle.cs" />
     <Compile Include="Assets\Scripts\Geist\Ghost_StateMoveToPoint.cs" />
@@ -123,7 +124,7 @@
     <Compile Include="Assets\CodeMonkey\Utils\FunctionPeriodic.cs" />
     <Compile Include="Assets\CodeMonkey\Utils\UI_Sprite.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStateIdle.cs" />
-    <Compile Include="Assets\Scripts\Geist\Ghost_StateSwitch.cs" />
+    <Compile Include="Assets\ButtonsFunctions.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\CodeMonkey\README.txt" />
