@@ -141,7 +141,7 @@ MonoBehaviour:
   speed: 0.5
   Sprite: {fileID: 1551151435672069973}
   gridObject: {fileID: 0}
-  visionRange: 3
+  visionRange: 4
   rb: {fileID: 1551151435672069979}
   animator: {fileID: 1551151435672069978}
   movement: {x: 0, y: 0}

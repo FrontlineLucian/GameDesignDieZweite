@@ -175,7 +175,7 @@ MonoBehaviour:
   patrol: 0001
   Sprite: {fileID: 7891776202167045498}
   gridObject: {fileID: 0}
-  visionRange: 3
+  visionRange: 4
   rb: {fileID: 4321464687856756884}
   animator: {fileID: 6251745921088248851}
   StunStars: {fileID: 8775644960572026080, guid: 04b3ca1c5f48cad458f550ed966eeb67,

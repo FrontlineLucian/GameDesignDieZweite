@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/__MENU_SELECT_LEVEL.unity
+- path: Assets/Scenes/WaldLevel2.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
