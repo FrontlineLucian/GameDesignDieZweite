@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/WaldLevel2.unity
+- path: Assets/Scenes/LaborLevel6.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

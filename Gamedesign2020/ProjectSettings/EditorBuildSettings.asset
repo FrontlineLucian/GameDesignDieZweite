@@ -21,11 +21,14 @@ EditorBuildSettings:
     path: Assets/Scenes/LaborLevel3.unity
     guid: 31bf72dc85c00b346acbea7b0adad9f7
   - enabled: 1
-    path: Assets/Scenes/Waldlevel1.unity.unity
+    path: Assets/Scenes/LaborLevel4.unity
     guid: 950f3f0720874e646bb8f2eeeb48834c
   - enabled: 1
-    path: Assets/Scenes/WaldLevel2.unity
+    path: Assets/Scenes/LaborLevel5.unity
     guid: f05abb968922ab145834aff6db84f9ef
+  - enabled: 1
+    path: Assets/Scenes/LaborLevel6.unity
+    guid: 1e78146df45e0ec4d96115b351c35294
   - enabled: 1
     path: Assets/Scenes/__MENU_SELECT_LEVEL.unity
     guid: c7ed3144b1408e549b79a8f56d8ab85d
