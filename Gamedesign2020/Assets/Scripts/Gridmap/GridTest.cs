@@ -153,7 +153,7 @@ public class GridTest
                     Vector2 dist = curr - center;
                     lightFactor = (brightness *(1/(dist.magnitude+1)));
 
-                    int value = Mathf.FloorToInt((lightFactor + (prio * 100)) * influence);
+                    int value = Mathf.FloorToInt((lightFactor + (prio)) * influence);
                     if (dist.magnitude <= radius)
                     {
                         if (GetValue(i,j) < value && GetValue(i,j)>0)

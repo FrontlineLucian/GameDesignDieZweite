@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraControl : MonoBehaviour
 {
@@ -17,12 +19,14 @@ public class CameraControl : MonoBehaviour
     private GameObject[] globalLights;
     private GameObject[] player;
 
+    private bool reload = false;
+
     private float alpha = 0;
     private float timer = 0;
     private bool locked = false;
 
     public int darknessStage = 0;
-
+   
 
     // Start is called before the first frame update
     void Start()
@@ -83,6 +87,13 @@ public class CameraControl : MonoBehaviour
                 goal = new Vector3(child.transform.position.x, child.transform.position.y, -10);
                 cam.orthographicSize += (.5f - cam.orthographicSize) * Time.deltaTime;
                 fac = Time.deltaTime * 5;
+                print(cam.orthographicSize);
+                if (cam.orthographicSize <= .6f && reload == false)
+                {
+                    StartCoroutine(LoadYourAsyncScene());
+                    reload = true;
+                }
+
 
                 //lichter dunkel
                 if (lights == null)
@@ -107,7 +118,7 @@ public class CameraControl : MonoBehaviour
 
                     if (rank.levelEndFaktor > 0)
                     {
-                        rank.levelEndFaktor -= 0.1f * Time.deltaTime;
+                        rank.levelEndFaktor -= 0.15f * Time.deltaTime;
                     }
                 }
                 foreach (GameObject light in lights)
@@ -115,7 +126,7 @@ public class CameraControl : MonoBehaviour
                     var rank = light.GetComponent<haesslicherFaktor>();
                     if (rank.levelEndFaktor > 0)
                     {
-                        rank.levelEndFaktor -= 0.1f * Time.deltaTime;
+                        rank.levelEndFaktor -= 0.15f * Time.deltaTime;
                     }
                 }
 
@@ -124,7 +135,7 @@ public class CameraControl : MonoBehaviour
                     var rank = light.GetComponent<haesslicherFaktor>();
                     if (rank.levelEndFaktor > 0)
                     {
-                        rank.levelEndFaktor -= 0.1f * Time.deltaTime;
+                        rank.levelEndFaktor -= 0.15f * Time.deltaTime;
                     }
                 }
                
@@ -149,5 +160,15 @@ public class CameraControl : MonoBehaviour
     public void setLock(bool b)
     {
         this.locked = b;
+    }
+    IEnumerator LoadYourAsyncScene()
+    {
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
 }

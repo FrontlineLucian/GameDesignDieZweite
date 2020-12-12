@@ -249,15 +249,15 @@ public class GridDebug : MonoBehaviour
             UnityEngine.Experimental.Rendering.Universal.Light2D light =lights[i].GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>();
             if (light != null)
             {
-                LightRank rank= light.GetComponent<LightRank>();
+                haesslicherFaktor rank = light.GetComponent<haesslicherFaktor>();
 
                 Vector3 centerLight = light.transform.position;
                 int brightness = (int)(light.intensity * 50);
-                int lightprio = rank.lightrank;
+                int lightprio = rank.lightRank;
                 if (brightness == 0) lightprio = 0;
                 int radius = (int)(light.pointLightOuterRadius / 0.32f);
 
-                grid.GenLight(centerLight, radius, brightness,lightprio, rank.influence);
+                grid.GenLight(centerLight, radius, brightness,lightprio, 1); //HIER---------------------
 
             }
 

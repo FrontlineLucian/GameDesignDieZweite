@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GhostController : MonoBehaviour
 {
     public String currentState = "Bob";
@@ -71,6 +71,10 @@ public class GhostController : MonoBehaviour
             cam.GetComponent<CameraControl>().setMode("FollowGhost");
         }
 
+        if (Input.GetButtonDown("Reset"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     void FixedUpdate()

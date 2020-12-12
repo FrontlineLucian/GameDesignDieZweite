@@ -66,7 +66,6 @@ public class KindControllerRaycast : MonoBehaviour
         cam.darknessStage = Mathf.RoundToInt( Mathf.Abs(cryFak - 1) * 4);
         if (cryFak < deathAt)
         {
-            print("DARK");
             cam.setMode("death");
             cam.setLock(true);
         }

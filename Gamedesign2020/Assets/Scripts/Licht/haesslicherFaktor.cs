@@ -20,6 +20,6 @@ public class haesslicherFaktor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.gameObject.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().intensity = eigentlicheIntensity * cryFactor * GhostInfluence * levelEndFaktor ;
+        this.gameObject.GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().intensity = eigentlicheIntensity * cryFactor * GhostInfluence * levelEndFaktor;
     }
 }
