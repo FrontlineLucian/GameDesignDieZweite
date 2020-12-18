@@ -289,7 +289,7 @@ public class GridTest
                 Vector3 dist = curr - center;
                 Vector2 currGrid = new Vector2(i, j);
                 Vector2 distGrid = currGrid - centerGrid;
-                if ((distGrid.magnitude <= visionRange&& GetValue(i, j)>maxLight.z)||(distGrid.magnitude <= visionRange && GetValue(i, j)==maxLight.z&&maxLight.z>1&&distGrid.magnitude>(new Vector2(maxLight.x,maxLight.y)-centerGrid).magnitude))
+                if ((distGrid.magnitude <= visionRange&& GetValue(i, j)>maxLight.z)||(distGrid.magnitude <= visionRange && GetValue(i, j)==maxLight.z&&maxLight.z>1&&distGrid.magnitude<(new Vector2(maxLight.x,maxLight.y)-centerGrid).magnitude))
                 {
 
                     if (collArrayB != null)

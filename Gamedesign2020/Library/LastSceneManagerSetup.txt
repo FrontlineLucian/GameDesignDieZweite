@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/__MENU.unity
+- path: Assets/Scenes/LaborLevel6.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

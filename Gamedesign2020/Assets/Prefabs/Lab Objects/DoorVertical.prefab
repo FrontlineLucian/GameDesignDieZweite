@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffdaac7ad8189da4c9623f1db63a2895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: 1
+  open: 0
   collision: {fileID: 391582910195890313}
   powerTrigger: {fileID: 3714752060456906931}
 --- !u!114 &3714752060456906931

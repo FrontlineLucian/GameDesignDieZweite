@@ -22,11 +22,13 @@ public class EnemyStateStunned : IState
         owner.movement = new Vector2(0, 0);
         owner.target.isCaught = false;
         StunStars = (GameObject)MonoBehaviour.Instantiate(StunStars, owner.transform.position+ new Vector3(0,0.25f), Quaternion.identity);
+        owner.GetComponent<BoxCollider2D>().enabled = false;
     }
 
     public void stateExit()
     {
         MonoBehaviour.Destroy(StunStars);
+        owner.GetComponent<BoxCollider2D>().enabled = true;
     }
     public void stateUpdate()
     {
