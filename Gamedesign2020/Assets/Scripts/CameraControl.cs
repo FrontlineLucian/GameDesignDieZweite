@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class CameraControl : MonoBehaviour
 {
 
-    private string mode = "FollowGhost";
+    public string mode = "FollowGhost";
     private GameObject ghost;
     private GameObject child;
     private Transform border;
@@ -31,7 +31,6 @@ public class CameraControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ghost = GameObject.FindGameObjectWithTag("GHOST");
         child = GameObject.FindGameObjectWithTag("KIND");
         border = transform.Find("BlackBorder");
         border2 = transform.Find("RedBorder");
@@ -43,6 +42,9 @@ public class CameraControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (ghost == null) {
+            ghost = GameObject.FindGameObjectWithTag("GHOST");
+        }else{
         alpha += (darknessStage - alpha) * Time.deltaTime;
         timer += 1 * Time.deltaTime;
 
@@ -88,7 +90,7 @@ public class CameraControl : MonoBehaviour
                 cam.orthographicSize += (.5f - cam.orthographicSize) * Time.deltaTime;
                 fac = Time.deltaTime * 5;
                 print(cam.orthographicSize);
-                if (cam.orthographicSize <= .6f && reload == false)
+                if (cam.orthographicSize <= .50001 && reload == false)
                 {
                     StartCoroutine(LoadYourAsyncScene());
                     reload = true;
@@ -147,7 +149,7 @@ public class CameraControl : MonoBehaviour
         var current = transform.position;
 
         transform.position = new Vector3(current.x + (goal.x - current.x) * fac, current.y + (goal.y - current.y) * fac, -10);
-
+        }
     }
 
     public void setMode(string mode)
@@ -164,7 +166,7 @@ public class CameraControl : MonoBehaviour
     IEnumerator LoadYourAsyncScene()
     {
 
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("__MENU_GAMEOVER", LoadSceneMode.Single);
 
         while (!asyncLoad.isDone)
         {

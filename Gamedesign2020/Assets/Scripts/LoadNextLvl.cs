@@ -97,10 +97,18 @@ public class LoadNextLvl : MonoBehaviour
     IEnumerator LoadYourAsyncScene()
     {
 
+        AsyncOperation asyncLoad;
+        
         char last = SceneManager.GetActiveScene().name[SceneManager.GetActiveScene().name.Length - 1];
-        string newNumber = Convert.ToString( int.Parse(last.ToString())+1 );
+        if (SceneManager.GetActiveScene().name == "LaborLevel6"){
+            asyncLoad = SceneManager.LoadSceneAsync("__MENU", LoadSceneMode.Single);
+        }else{
+            string newNumber = Convert.ToString( int.Parse(last.ToString())+1 );
 
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("LaborLevel" + newNumber, LoadSceneMode.Single);
+            asyncLoad = SceneManager.LoadSceneAsync("LaborLevel" + newNumber, LoadSceneMode.Single);
+        }
+
+
 
         while (!asyncLoad.isDone)
         {
