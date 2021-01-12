@@ -929,8 +929,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 441, y: -213.66}
-  m_SizeDelta: {x: -946.8971, y: -584.4691}
+  m_AnchoredPosition: {x: 441, y: -235.12}
+  m_SizeDelta: {x: -946.8971, y: -541.55286}
   m_Pivot: {x: 0.433062, y: 0.49999994}
 --- !u!114 &1285253742
 MonoBehaviour:
@@ -1346,9 +1346,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.1035, y: 5.2858}
-  m_SizeDelta: {x: 277.36493, y: 85.677704}
-  m_Pivot: {x: 0.47078398, y: 0.5616941}
+  m_AnchoredPosition: {x: -8.1035, y: 21.327}
+  m_SizeDelta: {x: 277.36493, y: 113.815}
+  m_Pivot: {x: 0.47078398, y: 0.68738323}
 --- !u!114 &1968329243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1382,17 +1382,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'WASD - Geist Bewegen
-
-    space  - Dash (in eine Richtung)
-
-    X        
-    - Wechsel Geist Form
-
-    Y         - Kamera zum Kind (halten)
-
-    R        
-    - Level Neustarten'
+  m_Text: "WASD - Geist Bewegen\nspace  -Dash (in eine Richtung)\n           -Angriff
+    (gedr\xFCckt halten)\nX         - Wechsel Geist Form\nY         - Kamera zum
+    Kind (halten)\nR         - Level Neustarten"
 --- !u!222 &1968329244
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -20531,6 +20531,11 @@ PrefabInstance:
       propertyPath: lightrank
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7859288473828357054, guid: 0b55d1f94a70afa4fae68f90347e0444,
+        type: 3}
+      propertyPath: lightRank
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8955713383759705000, guid: 0b55d1f94a70afa4fae68f90347e0444,
         type: 3}
       propertyPath: m_Sprite
