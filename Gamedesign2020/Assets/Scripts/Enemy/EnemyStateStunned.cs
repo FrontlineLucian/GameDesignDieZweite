@@ -6,7 +6,7 @@ public class EnemyStateStunned : IState
 {
     private EnemyController owner;
     private Animator animator;
-    public float stunDuration = 5.0f;
+    public float stunDuration = 7.0f;
     float GameTime = Time.time;
     private GameObject StunStars;
     

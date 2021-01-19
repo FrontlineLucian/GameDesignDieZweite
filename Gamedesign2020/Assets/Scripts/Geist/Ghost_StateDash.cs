@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using UnityEditorInternal;
+//using UnityEditorInternal;
 using UnityEngine;
 
 public class Ghost_StateDash : IState
